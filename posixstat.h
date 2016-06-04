@@ -142,8 +142,14 @@
 #endif /* !S_IRWXU */
 
 /* These are non-standard, but are used in builtins.c$symbolic_umask() */
+#ifndef S_IRUGO
 #define S_IRUGO		(S_IRUSR | S_IRGRP | S_IROTH)
+#endif
+#ifndef S_IWUGO
 #define S_IWUGO		(S_IWUSR | S_IWGRP | S_IWOTH)
+#endif
+#ifndef S_IXUGO
 #define S_IXUGO		(S_IXUSR | S_IXGRP | S_IXOTH)
+#endif
 
 #endif /* _POSIXSTAT_H */
